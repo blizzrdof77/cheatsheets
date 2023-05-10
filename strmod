@@ -1,0 +1,53 @@
+NAME:
+  strmod
+
+DESCRIPTION:
+  strmod tests or performs an operation on a string using pipe syntax
+
+AVAILABLE PARAMETERS:
+  $1 - operation      [the type of operation or test to run against the string]
+
+SUBCOMMANDS:
+  trim            Trim the extra whitespace of the string
+  collapse        Joins new lines of the string
+  to_upper        Transform the case of the string to uppercase
+  to_lower        Transform the case of the string to lowercase
+  to_title        Transform the case of the string to title case
+  to_camel        Transform the case of the string to camel case
+  slugify         Replace spaces with provided character (default is '_')
+  trim_suffix     Trim string suffix of provided string (default is whitespace)
+  trim_prefix     Trim string prefix of provided string (default is whitespace)
+  strip           Trim string prefix (1st arg) and suffix (2nd arg -- or 1st arg when no 2nd arg provided)
+  replace         Find & replace the provided string (1st arg) with other provided string (2nd arg)
+  regex_replace   RegEx find & replace using provided 1st arg as find string pattern & 2nd arg as replace string
+  length          Returns length of the string
+  count           Returns the number of times a sub-string occurs in the string
+  chars           Count total number of characters in the string
+  words           Count total number of words in the string
+  lines           Returns number of lines of the string, or number of lines containing provided sub-string
+  endswith        Test whether the string ends with the provided sub-string (returns true/false)
+  startswith      Test whether the string starts with the provided sub-string (returns true/false)
+  empty           Test whether the string is empty (returns true/false)
+  contains        Test whether the string contains the provided sub-string (returns true/false)
+  append          Appends the provided sub-string
+  prepend         Prepends the provided sub-string
+  wrap            Wraps the string with the provided prefix (1st arg) and suffix (2nd arg)
+
+
+OPTIONS:
+  -h, --help          [show this help documentation]
+
+SYNOPSIS:
+  strmod operation [$1] [$2]
+
+EXAMPLES:
+  echo "a string" | strmod to_upper                             # A STRING
+  echo "another string" | strmod contains "string"              # true
+  echo "yet another string" | strmod length                     # 18
+  echo "yet another string" | strmod startswith "another"       # false
+  echo "yet another string" | strmod count " "                  # 2
+  echo "yet\n another \nstring" | strmod lines                  # 3
+  echo "small string" | strmod replace 'small' 'tiny'           # tiny string
+  echo "string 1" | strmod regex_replace '(.*?)[ ].*' '\1_2'    # string_2
+  echo "::string::" | strmod strip ':' '::'                     # :string
+  echo "::string::" | strmod strip '::' | strmod count ':'                   # :string
