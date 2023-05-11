@@ -1,0 +1,22 @@
+NAME
+    onboardctl
+
+DESCRIPTION
+    Toggle visibility of onboard keyboard. Provide optional parameter (-s,-h)
+    to specify show/hide toggle action. No parameters will default to toggle.
+
+    This function has [1] optional parameter(s)
+        @1 = visibility toggle (hide/show)
+
+SYNOPSIS
+    onboardctl [show|hide]
+
+EXAMPLES
+    onboardctl --help
+    onboardctl --show
+    onboardctl --hide
+
+AVAILABLE OPTIONS:
+    --help            [show man docs/script help]
+    -h, --hide, hide  [hide onboard]
+    -s, --show, show  [show onboard]

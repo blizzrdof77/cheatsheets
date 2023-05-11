@@ -1,0 +1,27 @@
+NAME
+    toggle-dnd-mac
+
+DESCRIPTION
+    Control or return status of MacOS system setting for "Do Not Disturb" Mode (toggle/on/off/status) based on passed parameters.
+
+    This function requires 1 [optional] parameter:
+        @1 = state
+
+SYNOPSIS
+    toggle-dnd-mac state [--dry]
+    # Brackets [] indicate optional
+
+EXAMPLES
+    toggle-dnd-mac              # <- toggles DND mode (same as `toggle-dnd-mac toggle`)
+    toggle-dnd-mac state        # <- returns current DND state ('on' or 'off')
+    toggle-dnd-mac on           # <- turns on DND mode
+    toggle-dnd-mac off          # <- turns off DND mode
+    toggle-dnd-mac off --debug  # <- output the debug info without actually running
+
+AVAILABLE OPTIONS:
+    -h, --help                  [output the debug info without actually running]
+    -v, --debug               [show this help documentation]
+    --status, --get, --current  [return current DND state]
+    --on, --enable              [activate/enable DND mode]
+    --off, --disable            [deactivate/disable DND mode]
+    --toggle                    [toggle DND mode]

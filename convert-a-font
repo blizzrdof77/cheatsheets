@@ -1,0 +1,29 @@
+NAME
+    convert-a-font
+
+DESCRIPTION
+    Convert any standard font format to any/other desired formats, including:
+        - .eot
+        - .woff2
+        - .woff
+        - .otf
+        - .ttf
+        - .svg
+
+    This function requires 2 parameter(s)...
+        @1 = Input font file/path (to be converted)
+        @2 = Font types separated by commas (ttf,otf,eot,svg,woff,woff2)
+             [leave blank then press enter for all]
+
+
+SYNOPSIS
+    convert-a-font PARAM_1 [PARAM_2] # brackets [] indicate optional
+
+EXAMPLES
+    convert-a-font  # For interactive script
+    convert-a-font ./font.ttf otf,eot,svg  # Convert ttf to: otf, eot, svg
+    convert-a-font ~/Fonts/fontname.woff2 --all # Convert woff2 file to all formats
+
+AVAILABLE OPTIONS:
+    -a, --all  [convert to all formats]
+    -h, --help [show this help documentation]

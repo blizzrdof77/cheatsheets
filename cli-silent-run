@@ -1,0 +1,20 @@
+NAME
+    cli-silent-run
+
+DESCRIPTION
+    run a shell script with no output.
+
+AVAILABLE PARAMETERS
+    $1 - command                      [the command and any/all subcommands/options]
+
+AVAILABLE OPTIONS
+    -h, --help                        [show this help documentation]
+    -s, --silent, --bg, --background  [run as a background process]
+
+SYNOPSIS
+    cli-silent-run [--background] command
+
+EXAMPLES
+    cli-silent-run --help
+    cli-silent-run --background command subcommand
+    cli-silent-run param_name --option-1

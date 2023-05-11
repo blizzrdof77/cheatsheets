@@ -1,0 +1,23 @@
+NAME
+    YouTube Downloader for Karaoke (youtube-dl-karaoke)
+
+DESCRIPTION
+    Downloads a karaoke video from a YouTube URL, artist name, and song title.
+
+    This script requires 3 parameter(s)...
+        $1 = URL
+        $2 = ARTIST
+        $3 = SONGNAME
+
+SYNOPSIS
+    script-name PARAM_1 [PARAM_2] # brackets [] indicate optional
+
+EXAMPLES
+ |    PARAM     |   EXAMPLE                                    |
+ ----------------------------------------------------------------
+  $1 - URL        https://www.youtube.com/watch?v=GyOSzY3ujBs
+  $2 = ARTIST     "Billy Joel"
+  $3 = SONGNAME   "Uptown Girl"
+
+AVAILABLE OPTIONS:
+    -h,--help [Show this help documentation]

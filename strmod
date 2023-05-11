@@ -10,6 +10,7 @@ AVAILABLE PARAMETERS:
 SUBCOMMANDS:
   trim            Trim the extra whitespace of the string
   collapse        Joins new lines of the string
+  expand          Breaks spaces into new lines
   to_upper        Transform the case of the string to uppercase
   to_lower        Transform the case of the string to lowercase
   to_title        Transform the case of the string to title case
@@ -25,13 +26,14 @@ SUBCOMMANDS:
   chars           Count total number of characters in the string
   words           Count total number of words in the string
   lines           Returns number of lines of the string, or number of lines containing provided sub-string
-  endswith        Test whether the string ends with the provided sub-string (returns true/false)
-  startswith      Test whether the string starts with the provided sub-string (returns true/false)
-  empty           Test whether the string is empty (returns true/false)
-  contains        Test whether the string contains the provided sub-string (returns true/false)
+  endswith        Test whether the string ends with the provided sub-string (true/false)
+  startswith      Test whether the string starts with the provided sub-string (true/false)
+  empty           Test whether the string is empty (true/false)
+  contains        Test whether the string contains the provided sub-string (true/false)
+  equals          Test whether the string is the same as the provided sub-string (true/false)
   append          Appends the provided sub-string
   prepend         Prepends the provided sub-string
-  wrap            Wraps the string with the provided prefix (1st arg) and suffix (2nd arg)
+  wrap            Wraps the string with the provided prefix (arg 1) and suffix (arg 2)
 
 
 OPTIONS:

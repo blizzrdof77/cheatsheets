@@ -1,0 +1,23 @@
+NAME
+    add-to-path
+
+DESCRIPTION
+    Add a directory to your global PATH environment variable.
+
+AVAILABLE PARAMETERS:
+    $1 - path_dir       [The full directory path.]
+
+SYNOPSIS
+    add-to-path path_dir [--prepend,-p,-b || --save,-s || --verbose,-v]
+
+EXAMPLES
+    add-to-path --help
+    add-to-path --prepend /home/user/bin
+    add-to-path -v /usr/mybin
+    add-to-path /usr/mybin --save
+
+AVAILABLE OPTIONS
+    -h, --help          [show this help documentation.]
+    -p, -b, --prepend   [prepend to beginning of $PATH instead of the end.]
+    -s, --save          [wether to save this new path permanetly, adding it to your shell rc file.]
+    -v, --verbose       [Show detailed output.]

@@ -1,0 +1,21 @@
+
+NAME 
+     temp-script
+     
+DESCRIPTION
+     create & execute a temporary shell script
+       ~ optionally define 'histfile' to write to bash history
+       ~ optionally define 'my_tmp_dir' to specify custom temp directory
+       
+SYNOPSIS
+     temp-script [options]...
+     
+EXAMPLES
+     temp-script 
+     temp-script --new
+     temp-script --last
+     
+AVAILABLE OPTIONS:
+     --new        -- create a new temporary script
+     --last       -- re-run the last temporary script
+     

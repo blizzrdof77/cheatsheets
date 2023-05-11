@@ -1,0 +1,22 @@
+NAME 
+    write-to-history
+     
+DESCRIPTION
+    Write input or file contents to bash/shell history
+       ~ Requires 'HISTFILE' to be defined       
+
+   When --file is specified, perform a cat of the file contents to the history file. 
+   Otherwise, read standard input and echo the input to the history file.
+
+   With no INPUT or FILE specified, user is prompted to input value using standard read input.
+
+SYNOPSIS
+     write-to-history [INPUT]
+     write-to-history [OPTION]... [FILE]...
+     
+AVAILABLE OPTIONS:
+    --file [FILE]       -- write contents of a file
+
+EXAMPLES
+    write-to-history "echo 'hello'"
+    write-to-history --file /path/to/file.txt

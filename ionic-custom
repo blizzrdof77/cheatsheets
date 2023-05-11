@@ -1,0 +1,25 @@
+NAME
+    ionic
+
+DESCRIPTION
+    The Ionic command line interface (CLI) is your go-to tool for developing Ionic apps.
+
+SYNOPSIS
+     ionic <command> [<args>] [--help] [--verbose] [--quiet] [--no-interactive] [--confirm] [options]
+
+AVAILABLE OPTIONS:
+    ionic --help                                        Show this message
+    ionic --version                                     Print out the installed version of ionic
+    config <subcommand>                                 Manage CLI and project config values (subcommands: get, set)
+    docs                                                Open the Ionic documentation website
+    info                                                Print system/environment info
+    login                                               Login with your Ionic ID
+    signup                                              Create an Ionic account
+    ssh <subcommand>                                    Commands for configuring SSH keys (subcommands: add, delete, generate, list, setup, use)
+    start                                               Create a new Ionic project
+    telemetry                                           (deprecated) Opt in and out of telemetry
+
+EXAMPLES
+    ionic serve --address -p 1234 app.local             Start app server on http://app.local:1234
+    ionic serve --lab -c                                Serve app in browser on multiple platforms w/ console logging
+    ionic start myApp blank --type=ionic1               Creates a new blank working Ionic app using Ionic 1

@@ -1,0 +1,20 @@
+NAME 
+    find-replace
+     
+DESCRIPTION
+    Replaces some characters with other characters in a string.
+    
+    This function requires three parameters...
+        @1 = original string
+        @2 = find string
+        @3 = replace string
+
+SYNOPSIS
+    find-replace [STRING] [FIND] [REPLACE]
+     
+EXAMPLES
+    echo $(find-replace "original_string" "original" "new")
+        ~ (result is "new_string")
+     
+AVAILABLE OPTIONS:
+    N/A

@@ -1,0 +1,21 @@
+
+NAME 
+    suck-site
+     
+DESCRIPTION
+    Suck a remote website's files locally.
+    
+    This function requires two parameters...
+        @1 = Directory to download site files to
+        @2 = Remote URL
+
+SYNOPSIS
+    suck-site [DIRECTORY] [URL]
+     
+EXAMPLES
+    suck-site /home/user/new-site http://remote-site.com
+     
+AVAILABLE OPTIONS:
+    N/A
+    
+    

@@ -1,0 +1,18 @@
+NAME
+    update-symlink
+
+DESCRIPTION
+    Workaround to update existing symlink target path (since technically they can't be edited)
+
+    This function requires two parameters...
+        @1 = Name of symbolic link to edit
+        @2 = Full destination path to update existing symlink with
+
+SYNOPSIS
+    edit-symlink EXISTING_LINK TARGET_PATH
+
+EXAMPLES
+    edit-symlink ./existing-directory-symlink /home/user/new-directory
+
+AVAILABLE OPTIONS:
+    N/A

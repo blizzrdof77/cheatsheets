@@ -1,0 +1,22 @@
+NAME
+    string-contains
+
+DESCRIPTION
+    Checks if a substring exists within a string, returning true or false.
+
+    This function requires three parameters...
+        @1 = substring (needle)
+        @2 = string to search (haystack)
+
+SYNOPSIS
+    find-replace [NEEDLE] [HAYSTACK]
+
+EXAMPLES
+    if [[ "$(string-contains 'root' $PWD)" = "true" ]]; then
+        echo 'case closed!'
+    fi
+
+    string-contains 'app' 'apple' # <- result/output is "true"
+
+AVAILABLE OPTIONS:
+    --help

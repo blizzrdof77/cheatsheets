@@ -1,0 +1,173 @@
+retropie4 :: ~ % sudo rpi-eeprom-config
+BOOT_UART=0
+WAKE_ON_GPIO=1
+POWER_OFF_ON_HALT=0
+
+
+
+
+
+
+
+
+
+
+
+
+
+[all]
+BOOT_ORDER=0xf14
+retropie4 :: ~ % sudo rpi-eeprom-update
+*** UPDATE AVAILABLE ***
+BOOTLOADER: update available
+   CURRENT: Thu 29 Apr 2021 04:11:25 PM UTC (1619712685)
+    LATEST: Tue 06 Jul 2021 10:44:53 AM UTC (1625568293)
+   RELEASE: stable (/lib/firmware/raspberrypi/bootloader/stable)
+            Use raspi-config to change the release.
+
+  VL805_FW: Dedicated VL805 EEPROM
+     VL805: up to date
+   CURRENT: 000138a1
+    LATEST: 000138a1
+retropie4 :: ~ % sudo rpi-eeprom-update --help                                                                                                                                          1 ↵
+
+
+Illegal option --
+Unknown argument "?"
+rpi-eeprom-update [options]... [FILE]
+
+Bootloader EEPROM update tool for the Raspberry Pi 4.
+
+Checks whether the Raspberry Pi 4 bootloader and the VL805 USB controller
+EEPROMs are up to date and optionally updates the EEPROMs at the next reboot.
+
+The default update mechanism writes recovery.bin and the EEPROM update
+image(s) (pieeprom.upd and vl805.bin) to the boot partition.
+The SHA256 hash of the corresponding images are written to pieeprom.sig
+and/or vl805.sig. This guards against file system corruption which could
+cause the EEPROM to be flashed with an invalid image. This is not a
+security check.
+
+At the next reboot the ROM runs recovery.bin which updates EEPROM(s).
+If the update was successful recovery.bin renames itself to recovery.000
+to prevent it from running a second time then resets the system.
+The system should then boot normally.
+
+If /boot does not correspond to the boot partition and this
+is not a NOOBS system, then the mount point for BOOTFS should be defined
+in /etc/default/rpi-eeprom-update by defining the BOOTFS variable.
+
+A backup of the current EEPROM config file is written to /var/lib/raspberrypi/bootloader/backup
+before applying the update.
+
+Unless the -d flag is specified, the current bootloader configuration is
+retained.
+
+Options:
+   -a Automatically install bootloader and USB (VLI) EEPROM updates.
+   -A Specify which type of EEPROM to automatically update (vl805 or bootloader)
+   -b Outputs the path that pending EEPROM updates will be written to.
+   -d Use the default bootloader config, or if a file is specified using the -f
+      flag use the config in that file. This option only applies when a
+      bootloader EEPROM update is needed; if the bootloader EEPROM is up to date
+      then its config will not be changed.
+   -f Install the given file instead of the latest applicable update
+      Ignores the FREEZE_VERSION flag in bootloader and is intended for manual
+      firmware updates.
+   -h Display help text and exit
+   -i Ignore package checksums - for rpi-eeprom developers.
+   -j Write status information using JSON notation (requires -m option)
+   -l Returns the full path to the latest available EEPROM image file according
+      to the FIRMWARE_RELEASE_STATUS and FIRMWARE_IMAGE_DIR settings.
+   -m Write status information to the given file when run without -a or -f
+   -r Removes temporary EEPROM update files from the boot partition. This also
+      cancels a pending update.
+   -s Skips silent, automatic upgrades for default releases if the current
+      bootloader release is newer than the version specified by
+      BOOTLOADER_AUTO_UPDATE_MIN_VERSION 1599135103
+   -u Install the specified VL805 (USB EEPROM) image file.
+
+Environment:
+Environment variables should be defined in /etc/default/rpi-eeprom-update
+
+EEPROM_CONFIG_HOOK
+
+Specifies the path of an optional script which post-processes the
+configuration file before it is applied to the new image. The modified
+output must contain at least 3 lines and should contain WAKE_ON_GPIO
+and POWER_OFF_ON_HALT settings.
+
+FIRMWARE_RELEASE_STATUS
+
+Specifies the release status of the firmware to apply.
+
+Before selecting a firmware release directory this script checks whether there
+is a board revision specific variant e.g. default-c03111. If present then the
+board-revision specific version is used in preference.
+
+Release status:
+Bootloader releases follow a pipeline where images are released to the 'beta'
+directory first. The binaries are then promoted to 'latest' and finally 'default'
+so the 'default' binary is always the most tested release.
+
+default:
+The default bootloader image which supports all current models and hardware
+revisions.
+If a critical bug fix is required then the minimum default version number
+(BOOTLOADER_AUTO_UPDATE_MIN_VERSION) in the rpi-eeprom package is updated
+causing the bootloader to be automatically updated.
+
+latest:
+Contains the latest features which have undergone testing via the 'beta'
+release. Backwards compatiblity for configuration parameters is maintained
+once a feature is in the latest release directory.
+If the 'latest' release is selected then bootloader is automatically upgraded
+when the rpi-eeprom package is updated.
+
+As far as rpi-eeprom-update is concerned FIRMWARE_RELEASE_STATUS is just
+the subdirectory mapping under /lib/firmware/raspberrypi/bootloader. Therefore, custom release
+directories are supported by creating the relevant directory and changing
+the FIRMWARE_RELEASE_STATUS environment variable.
+
+The 'default' and 'latest' release names are symlinks to the old directory
+names of 'critical' / 'stable'.
+
+Examples:
+To extract the configuration file from an EEPROM image:
+   rpi-eeprom-config pieeprom.bin --out bootconf.txt
+
+To update the configuration file in an EEPROM image:
+   rpi-eeprom-config pieeprom.bin --config bootconf.txt --out pieeprom-new.bin
+
+To flash the new image:
+   sudo rpi-eeprom-update -d -f ./pieeprom-new.bin
+
+The syntax is the same as config.txt See online documentation for the list of parameters.
+
+The official documentation for the Raspberry Pi bootloader EEPROM is available at
+https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md
+
+Compute Module 4 (CM4):
+
+CM4 is designed to support embedded applications where physical access to the CM4
+may be limited.  An invalid bootloader configuration or software bug could
+cause the system to fail to boot so automatic updates are disabled. We also
+recommend write-protecting the SPI EPPROM after flashing it using usbboot.
+
+CM4 bootloader and EEPROM update instructions:
+   https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711_bootloader_config.md
+
+usbboot instructions for flashing CM4 EMMC and bootloader EEPROM:
+   https://www.raspberrypi.org/documentation/hardware/computemodule/cm-emmc-flashing.md
+
+The CM4 ROM does not support running recovery.bin from the EMMC on CM4 so this service
+is disabled by default. SELF_UPDATE from USB or Network boot is supported but this
+must first be enabled by removing ENABLE_SELF_UPDATE=0 from the EEPROM config
+via usbboot.
+
+After enabling self-update set the CM4_ENABLE_RPI_EEPROM_UPDATE=1 environment
+variable or define it in /etc/default/rpi-eeprom-update.
+
+N.B. If there is a power failure during SELF_UPDATE the EEPROM write may fail and
+usbboot must be used to flash the bootloader EEPROM. SELF_UPDATE is not recommended
+for updating the bootloader on remote systems.

@@ -1,0 +1,21 @@
+NAME
+    hostsctl
+
+DESCRIPTION
+    Add or remove entries from '/etc/hosts'
+
+    This function requires at least one parameter with an additional optional parameter
+        $1 - name of domain/hostname
+        $2 - ip address (optional: default is '$IP')
+
+SYNOPSIS
+    hostsctl [option] [host_name] [ip_address]
+
+EXAMPLES
+    hostsctl mydomain.local 10.2.3.40 # default is to add entry
+    hostsctl --add mydomain.local
+    hostsctl --remove mydomain.local
+
+AVAILABLE OPTIONS
+    --add       add entry to /etc/hosts
+    --remove    remove entry from /etc/hosts

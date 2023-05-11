@@ -1,0 +1,15 @@
+NAME
+    kicns
+
+DESCRIPTION
+    Convert a 'png' image to an 'icns' iconset
+
+    This function requires 1 parameter(s)...
+        @1 = path/filename
+
+SYNOPSIS
+    kicns $PATH_AND_FILENAME
+
+EXAMPLES
+    kicns image.png
+    kicns /usr/local/share/icons/icon.png

@@ -1,0 +1,28 @@
+NAME
+    karaoketools--add-audio-to-video
+
+DESCRIPTION
+    Add audio to a video file using ffmpeg
+
+SOURCE
+    https://stackoverflow.com/questions/11779490/how-to-add-a-new-audio-not-mixing-into-a-video-using-ffmpeg#answer-11783474
+
+EXAMPLES
+
+---- METHOD 1: Add Audio To Video: (Stream Copy) ------
+
+        COMMAND
+        `ffmpeg -i video.avi -i audio.mp3 -codec copy -shortest output.avi`
+
+        DETAILS
+           * Omitting the -map option will use the default stream selection. This will work if your video input has no audio.
+           * This example uses -codec copy to stream copy (no re-encoding; quality is preserved and it is fast).
+           * The -shortest option will make output.avi the same duration as the shortest input.
+
+---- METHOD 2: Add Audio To Video: (Re-Encode) --------
+
+        COMMAND
+        `ffmpeg -i video.avi -i audio.mp3 -c:v libx264 -c:a libvorbis -shortest output.mkv`
+
+        DETAILS
+        # If your output doesn't like the original formats, or if you want to change formats you can specify the encoders:

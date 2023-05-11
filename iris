@@ -1,0 +1,32 @@
+NAME
+	iris
+
+DESCRIPTION
+	Iris micro protects your eyes in under 1MB.
+	You can use a default mode (day,night,max), or run iris with custom values.
+
+	For example, `iris 2000 50` sets `temperature` to '2000K' & `brightness` to '50%'
+
+ARGUMENTS
+	This function accepts two parameters:
+	---------------------------------------
+
+	@1 = temperature 	(degrees in kelvin)	[1 - 10000]
+	@2 = brightness  	(percentage)				[1 - 100]
+
+SYNOPSIS
+	iris [temperature] [brightness]
+	iris [--day,-d || --night,-n || --max,-m]
+
+EXAMPLES
+	iris					# auto
+	iris 2000 50	# dimmer, warmer
+	iris 6000 95	# brighter, cooler
+	iris --day		# set for daytime mode (also valid: `iris day` or `iris -d`)
+	iris --night	# set for nighttime mode (also valid: `iris night` or `iris -n`)
+	iris --max		# set for maximum temperature & brightness (also valid: `iris max` or `iris -m`)
+
+AVAILABLE OPTIONS:
+	--day, -d			[activate daytime settings]
+	--night, -n		[activate nighttime settings]
+	--max, -m			[activate nighttime settings]

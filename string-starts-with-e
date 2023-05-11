@@ -1,0 +1,18 @@
+NAME
+    string-starts-with
+
+DESCRIPTION
+    script-description
+
+AVAILABLE PARAMETERS
+    $1 - param_name     [param-1-info]
+
+AVAILABLE OPTIONS
+    -h, --help          [show this help documentation]
+
+SYNOPSIS
+    string-starts-with param_name [--option-1,-1 || --option-2,-2]
+
+EXAMPLES
+    string-starts-with --help
+    string-starts-with param_name --option-1

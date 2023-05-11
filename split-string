@@ -1,0 +1,23 @@
+NAME
+    split-string
+
+DESCRIPTION
+    Split a string returning the specified index (or last instance by default)
+
+    This function requires [2] parameter(s) and [1] optional parameter
+
+    REQUIRED PARAMETERS:
+    	$1 - NEEDLE
+    	$2 - HAYSTACK
+
+	OPTIONAL PARAMETERS:
+    	$3 - INDEX
+
+SYNOPSIS
+	Brackets [] indicate optional
+
+EXAMPLES
+    split-string NEEDLE HAYSTACK [INDEX] 
+
+AVAILABLE OPTIONS:
+    N/A

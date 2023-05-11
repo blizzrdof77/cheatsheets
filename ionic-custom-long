@@ -1,0 +1,127 @@
+NAME
+    ionic
+
+DESCRIPTION
+    The Ionic command line interface (CLI) is your go-to tool for developing Ionic apps.
+
+SYNOPSIS
+     ionic <command> [<args>] [--help] [--verbose] [--quiet] [--no-interactive] [--confirm] [options]
+
+USAGE:
+    ionic config <command> [<args>] [options]           Manage CLI and project config values
+      --help
+      --verbose
+      --quiet
+      --no-interactive
+      --confirm
+    ionic config get                                    Print config values
+    ionic config set                                    Set config values
+    ionic docs                                          Open the Ionic documentation website
+    ionic info                                          Print system/environment info
+    ionic login                                         Login with your Ionic ID
+    ionic signup                                        Create an Ionic account
+    ionic ssh <command> [<args>] [options]              Commands for configuring SSH keys
+      --help
+      --verbose
+      --quiet
+      --no-interactive
+      --confirm
+    ioinic ssh add                                      Add an SSH public key to Ionic
+    ioinic ssh delete                                   Delete an SSH public key from Ionic (aliases: remove, rm)
+    ioinic ssh generate                                 Generates a private and public SSH key pair
+    ioinic ssh list                                     List your SSH public keys on Ionic (alias: ls)
+    ioinic ssh setup                                    Setup your Ionic SSH keys automatically
+    ioinic ssh use                                      Set your active Ionic SSH key
+    ionic start [<name>] [<template>] [options]         Commands for checking the health of your Ionic project
+      --list, -l                                        List starter templates available
+      --type                                            Type of project to start (e.g. ionic-angular, ionic1) (default: ionic-angular)
+      --display-name, -n                                Human-readable name (use quotes around the name)
+      --cordova                                         Include Cordova integration
+      --pro-id                                          Specify an app ID from the Ionic Dashboard to link
+      --no-deps                                         Do not install npm/yarn dependencies
+      --no-git                                          Do not initialize a git repo
+      --no-link                                         Do not ask to connect the app with the Ionic Dashboard
+      --bundle-id                                       Specify the bundle ID/application ID for your app (reverse-DNS notation)
+    ionic telemetry                                     (deprecated) Opt in and out of telemetry
+    ionic build [options]                               Build web assets and prepare your app for any platform targets
+      --prod                                            Build the application for production
+      --aot                                             Perform ahead-of-time compilation for this build
+      --minifyjs                                        Minify JS for this build
+      --minifycss                                       Minify CSS for this build
+      --optimizejs                                      Perform JS optimizations for this build
+    ionic cordova <command> [<args>] [options]          Cordova functionality (subcommands: build, compile, emulate, platform, plugin, prepare, requirements, resources, run)
+      --help
+      --verbose
+      --quiet
+      --no-interactive
+      --confirm
+    ionic cordova build                                 Build (prepare + compile) an Ionic project for a given platform
+    ionic cordova compile                               Compile native platform code
+    ionic cordova emulate                               Emulate an Ionic project on a simulator or emulator
+    ionic cordova platform                              Manage Cordova platform targets (alias: platforms)
+    ionic cordova plugin                                Manage Cordova plugins (alias: plugins)
+    ionic cordova prepare                               Copies assets to Cordova platforms, preparing them for native builds
+    ionic cordova requirements                          Checks and print out all the requirements for platforms
+    ionic cordova resources                             Automatically create icon and splash screen resources
+    ionic cordova run                                   Run an Ionic project on a connected device
+    ionic doctor <command> [<args>] [options]           Commands for checking the health of your Ionic project (subcommands: check, ignore, list)
+      --help
+      --verbose
+      --quiet
+      --no-interactive
+      --confirm
+    ionic doctor check                                  Check the health of your Ionic project
+    ionic doctor ignore                                 Ignore a particular issue
+    ionic doctor list                                   List all issue identifiers (alias: ls)
+    ionic generate [<type>] [<name>] [options]          Generate pipes, components, pages, directives, providers, and tabs (ionic-angular >= 3.0.0) (alias: g)
+      --no-module                                       Do not generate an NgModule for the component
+      --constants                                       Generate a page constant file for lazy-loaded pages
+    ionic generate component                            Generate component w/ name (e.g. ionic g component foo)
+    ionic generate directive                            Generate directive component
+    ionic generate page                                 Generate page component (e.g. ionic generate page Login)
+    ionic generate pipe                                 Generate pipe component (e.g. ionic g pipe MyFilterPipe)
+    ionic generate provider                             Generate provider component
+    ionic generate tabs                                 Generate tabs component
+    ionic git <command> [<args>] [options]              Commands relating to git (subcommands: remote)
+      --help
+      --verbose
+      --quiet
+      --no-interactive
+      --confirm
+    ionic git remote                                    Adds/updates the Ionic git remote to your local Ionic app repository
+    ionic integrations <command> [<args>] [options]     Add or disable various integrations in your app (subcommands: disable, enable)
+      --help
+      --verbose
+      --quiet
+      --no-interactive
+      --confirm
+    ionic integrations disable                          Disable an integration
+    ionic integrations enable                           Add various integrations to your app
+    ionic link [<app_id>] [options]                     Connect your local app to Ionic (e.g. ionic link a1b2c3d4)
+      --name                                            The app name to use during the linking of a new app
+    ionic monitoring <command> [<args>] [options]       Commands relating to Ionic Pro error monitoring (subcommands: syncmaps)
+      --help
+      --verbose
+      --quiet
+      --no-interactive
+      --confirm
+    ionic monitoring syncmaps                           Sync Source Maps to Ionic Pro Error Monitoring service
+    ionic serve [options]                               Start a local dev server for app dev/testing
+      --consolelogs, -c                                 Print app console logs to Ionic CLI
+      --no-open                                         Do not open a browser window
+      --local                                           Disable external network usage
+      --lab, -l                                         Test your apps on multiple platform types in the browser
+      --platform, -t                                    Start serve with a specific platform (android, ios)
+      --address                                         Use specific address for the dev server (default: 0.0.0.0)
+      --port, -p                                        Use specific port for HTTP (default: 8100)
+      --livereload-port, -r                             Use specific port for live-reload (default: 35729)
+      --dev-logger-port                                 Use specific port for dev server communication (default: 53703)
+      --no-devapp                                       Do not publish DevApp service
+      --no-proxy                                        Do not add proxies
+      --browser, -w                                     Specifies the browser to use (safari, firefox, google chrome)
+      --browseroption, -o                              Specifies a path to open to (/#/tab/dash)
+
+EXAMPLES
+    ionic serve --address -p 1234 app.local             Start app server on http://app.local:1234
+    ionic serve --lab -c                                Serve app in browser on multiple platforms w/ console logging
+    ionic start myApp blank --type=ionic1               Creates a new blank working Ionic app using Ionic 1
