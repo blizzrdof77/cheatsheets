@@ -34,6 +34,9 @@ SUBCOMMANDS:
   append          Appends the provided sub-string
   prepend         Prepends the provided sub-string
   wrap            Wraps the string with the provided prefix (arg 1) and suffix (arg 2)
+  calculate       Evaluate basic arithmetic operation (e.g. "+7") against the value and display the result
+  get_type        Return the data type of the value (number, string, boolean, array, object, null)
+  is_type         Check if a value is of given type (number, string, boolean, array, object, null)
 
 
 OPTIONS:
@@ -43,13 +46,17 @@ SYNOPSIS:
   strmod operation [$1] [$2]
 
 EXAMPLES:
-  echo "a string" | strmod to_upper                             # A STRING
-  echo "another string" | strmod contains "string"              # true
-  echo "yet another string" | strmod length                     # 18
-  echo "yet another string" | strmod startswith "another"       # false
-  echo "yet another string" | strmod count " "                  # 2
-  echo "yet\n another \nstring" | strmod lines                  # 3
-  echo "small string" | strmod replace 'small' 'tiny'           # tiny string
-  echo "string 1" | strmod regex_replace '(.*?)[ ].*' '\1_2'    # string_2
-  echo "::string::" | strmod strip ':' '::'                     # :string
-  echo "::string::" | strmod strip '::' | strmod count ':'                   # :string
+  echo "a string" | strmod to_upper                               # A STRING
+  echo "another string" | strmod contains "string"                # true
+  echo "yet another string" | strmod length                       # 18
+  echo "yet another string" | strmod startswith "another"         # false
+  echo "yet another string" | strmod count " "                    # 2
+  echo "yet\n another \nstring" | strmod lines                    # 3
+  echo "small string" | strmod replace 'small' 'tiny'             # tiny string
+  echo "string 1" | strmod regex_replace '(.*?)[ ].*' '\1_2'      # string_2
+  echo "::string::" | strmod strip ':' '::'                       # :string
+  echo "::string::" | strmod strip '::' | strmod count ':'        # :string
+  echo "5" | strmod get_type                                      # number
+  echo "10" | strmod calculate '-9'                               # 1
+  echo '{}' | strmod is_type object                               # true
+  echo 5 | strmod is_type string | strmod get_type                # boolean
