@@ -30,7 +30,9 @@ SUBCOMMANDS:
   startswith      Test whether the string starts with the provided sub-string (true/false)
   empty           Test whether the string is empty (true/false)
   contains        Test whether the string contains the provided sub-string (true/false)
+  contains_any    Test whether the string contains any of the provided sub-strings (true/false)
   equals          Test whether the string is the same as the provided sub-string (true/false)
+  equals_any      Test whether the string is the same as any of the provided sub-strings (true/false)
   append          Appends the provided sub-string
   prepend         Prepends the provided sub-string
   wrap            Wraps the string with the provided prefix (arg 1) and suffix (arg 2)
@@ -60,3 +62,5 @@ EXAMPLES:
   echo "10" | strmod calculate '-9'                               # 1
   echo '{}' | strmod is_type object                               # true
   echo 5 | strmod is_type string | strmod get_type                # boolean
+  echo "abc" | strmod equals_any a b c                            # false
+  echo "abc" | strmod contains_any a b c                          # true
