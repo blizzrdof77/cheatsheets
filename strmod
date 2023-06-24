@@ -36,6 +36,8 @@ SUBCOMMANDS:
   contains_any    Test whether the string contains any of the provided sub-strings (true/false)
   equals          Test whether the string is the same as the provided sub-string (true/false)
   equals_any      Test whether the string is the same as any of the provided sub-strings (true/false)
+  greaterthan     Test whether the numeric string is greater than the provided numeric value (true/false)
+  lessthan        Test whether the numeric string is less than the provided numeric value (true/false)
   append          Appends the provided sub-string
   prepend         Prepends the provided sub-string
   wrap            Wraps the string with the provided prefix (arg 1) and suffix (arg 2)
@@ -70,3 +72,5 @@ EXAMPLES:
   echo "uno,dos,tres" | strmod split "," 1                        # dos
   echo "http://website.com" | strmod slice "://" last             # website.com
   echo "jo McCan" | strmod capitalize							  # Joe McCan
+  echo "5" | strmod greaterthan 3								  # true
+  echo "5" | strmod lessthan 3                                    # false
