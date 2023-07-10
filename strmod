@@ -9,7 +9,8 @@ AVAILABLE PARAMETERS:
 
 SUBCOMMANDS:
   trim            Trim the extra whitespace of the string
-  collapse        Joins new lines of the string
+  join            Join all new lines (replacing with spaces)
+  collapse        Delete multiple consecutive line breaks
   expand          Breaks spaces into new lines
   to_upper        Transform the case of the string to uppercase
   uppercase       (alias for to_upper)
@@ -23,12 +24,12 @@ SUBCOMMANDS:
   slugify         Replace spaces with provided character (default is '_')
   trim_suffix     Trim string suffix of target string (default is whitespace)
   trim_prefix     Trim string prefix of target string (default is whitespace)
-  strip           Trim string prefix (1st arg) and suffix (2nd arg -- or 1st arg when no 2nd arg provided)
-  split           Split a string into pieces at provided substring (1st arg) and optionally return first, last, the index, OR a separator string (2nd arg)
-  slice           Split a string into pieces at provided substring (1st arg) and optionally return first or last piece
-  replace         Find & replace the subject string (1st arg) with other target string (2nd arg)
+  strip           Trim string prefix ($1) and suffix ($2 -- or $1 when no $2 provided)
+  split           Split string at provided substring ($1) and optionally return index/first/last OR a separator string ($2)
+  slice           Split a string into pieces at provided substring ($1) and optionally return first or last piece
+  replace         Find & replace the subject string ($1) with other target string ($2)
   find_replace    (alias for replace)
-  regex_replace   RegEx find & replace using provided 1st arg as find string pattern & 2nd arg as replace string
+  regex_replace   RegEx find & replace using provided $1 as find string pattern & $2 as replace string
   regreplace      (alias for regex_replace)
   remove          Removes all provided substrings from the string
   without         (alias for remove)
