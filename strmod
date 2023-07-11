@@ -56,6 +56,7 @@ SUBCOMMANDS:
   append          Appends the provided substring
   wrap            Wraps the string with the provided prefix (arg 1) and suffix (arg 2)
   calculate       Evaluate basic arithmetic operation (e.g. "+7") against the value and display the result
+  round           Round the subject number to the closest integer
   get_type        Return the data type of the value (number, string, boolean, array, object, null)
   is_type         Check if a value is of given type (number, string, boolean, array, object, null)
 
@@ -88,3 +89,4 @@ EXAMPLES:
   echo "jo McCan" | strmod capitalize							                # Joe McCan
   echo "5" | strmod greaterthan 3								                  # true
   echo "5" | strmod lessthan 3                                    # false
+  echo "20.54" | strmod round                                     # 21
