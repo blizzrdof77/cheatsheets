@@ -1,6 +1,9 @@
 NAME:
   strmod
 
+VERSION:
+  0.43.1 (2023-07-11)
+
 DESCRIPTION:
   strmod tests or performs an operation on a string using pipe syntax
 
