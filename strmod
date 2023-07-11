@@ -1,3 +1,4 @@
+
 NAME:
   strmod
 
@@ -5,7 +6,7 @@ DESCRIPTION:
   strmod tests or performs an operation on a string using pipe syntax
 
 AVAILABLE PARAMETERS:
-  $1 - operation      [the type of operation or test to run against the string]
+  $1 - operation  [the type of operation or test to run against the string]
 
 SUBCOMMANDS:
   trim            Trim the extra whitespace of the string
@@ -24,44 +25,44 @@ SUBCOMMANDS:
   slugify         Replace spaces with provided character (default is '_')
   trim_suffix     Trim string suffix of target string (default is whitespace)
   trim_prefix     Trim string prefix of target string (default is whitespace)
-  strip           Trim string prefix ($1) and suffix ($2 -- or $1 when no $2 provided)
-  split           Split string at provided substring ($1) and optionally return index/first/last OR a separator string ($2)
-  slice           Split a string into pieces at provided substring ($1) and optionally return first or last piece
-  replace         Find & replace the subject string ($1) with other target string ($2)
+  strip           Trim string prefix [$1] and suffix [$2] (prefix/suffix are equal if [$2] not provided)
+  split           Split subject string at provided substring, optionally return index [$2] OR string using [$2] as glue
+  slice           Split subject string into pieces at provided substring [$1], optionally returning first or last piece
+  replace         Find & replace subject string [$1] with other target string [$2]
   find_replace    (alias for replace)
-  regex_replace   RegEx find & replace using provided $1 as find string pattern & $2 as replace string
+  regex_replace   RegEx find/replace using provided needle [$1] and replacement string [$2]
   regreplace      (alias for regex_replace)
-  remove          Removes all provided substrings from the string
+  remove          Removes all provided substrings from subject string
   without         (alias for remove)
-  words           Count total number of words in the subject string
-  length          Returns length of the string
-  count           Returns the number of times a sub-string occurs in the subject string
-  chars           Count total number of characters in the subject string
-  line            Returns the line number provided of the subject string
-  lines           Returns number of lines of the string, or number of lines containing provided sub-string
-  sort            Sorts or merges lines of the subject string. [-r,--reverse]
-  random          Randomizes the order of the lines in the subject string
+  words           Count number of words in subject string
+  length          Returns length of subject string
+  count           Returns number of times substring [$1] occurs in subject string
+  chars           Count total number of characters in subject string
+  line            Returns line number [$1] of subject string
+  lines           Returns number of lines in subject string OR number of lines containing provided substring [$1]
+  sort            Sorts or merges lines of subject string [-r,--reverse]
+  random          Randomizes the order of lines in subject string
   shuffle         (alias for random)
-  reverse         Reverses the order of the lines in the subject string.
-  endswith        Test whether the string ends with the provided sub-string (true/false)
-  startswith      Test whether the string starts with the provided sub-string (true/false)
+  reverse         Reverses the order of the lines in subject string
+  endswith        Test whether the string ends with the provided substring (true/false)
+  startswith      Test whether the string starts with the provided substring (true/false)
   empty           Test whether the string is empty (true/false)
-  contains        Test whether the string contains the provided sub-string (true/false)
-  contains_any    Test whether the string contains any of the provided sub-strings (true/false)
-  equals          Test whether the string is the same as the provided sub-string (true/false)
-  equals_any      Test whether the string is the same as any of the provided sub-strings (true/false)
+  contains        Test whether the string contains the provided substring (true/false)
+  contains_any    Test whether the string contains any of the provided substrings (true/false)
+  equals          Test whether the string is the same as the provided substring (true/false)
+  equals_any      Test whether the string is the same as any of the provided substrings (true/false)
   greaterthan     Test whether the numeric string is greater than the provided numeric value (true/false)
   lessthan        Test whether the numeric string is less than the provided numeric value (true/false)
-  prepend         Prepends the provided sub-string
-  append          Appends the provided sub-string
+  prepend         Prepends the provided substring
+  append          Appends the provided substring
   wrap            Wraps the string with the provided prefix (arg 1) and suffix (arg 2)
   calculate       Evaluate basic arithmetic operation (e.g. "+7") against the value and display the result
   get_type        Return the data type of the value (number, string, boolean, array, object, null)
   is_type         Check if a value is of given type (number, string, boolean, array, object, null)
 
-
 OPTIONS:
-  -h, --help          [show this help documentation]
+  -h, --help      [display this help text and exit]
+  -v, --version   [display version information and exit]
 
 SYNOPSIS:
   strmod operation [$1] [$2]
@@ -85,6 +86,6 @@ EXAMPLES:
   echo "abc" | strmod contains_any a b c                          # true
   echo "uno,dos,tres" | strmod split "," 1                        # dos
   echo "http://website.com" | strmod slice "://" last             # website.com
-  echo "jo McCan" | strmod capitalize							  # Joe McCan
-  echo "5" | strmod greaterthan 3								  # true
+  echo "jo McCan" | strmod capitalize							                # Joe McCan
+  echo "5" | strmod greaterthan 3								                  # true
   echo "5" | strmod lessthan 3                                    # false
