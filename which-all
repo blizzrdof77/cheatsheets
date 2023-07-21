@@ -1,0 +1,20 @@
+NAME:
+  which-all
+
+DESCRIPTION:
+  Returns the final destination of a symlink, including any symbolic links along the way.
+
+USAGE:
+  which-all [OPTIONS] COMMAND
+
+PARAMETERS:
+  $1 - command    The name of the executable you're whiching.
+
+OPTIONS:
+  -h, --help      [display this help text and exit]
+  -r, --raw       [return the raw string without any colors/formatting]
+
+EXAMPLES:
+  which-all php
+  which-all --raw php
+  which-all --help
