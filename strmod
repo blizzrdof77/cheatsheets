@@ -2,7 +2,7 @@ NAME:
   strmod
 
 VERSION:
-  0.43.4 (2023-07-31)
+  0.43.5 (2023-07-31)
 
 DESCRIPTION:
   strmod tests or performs an operation on a string using pipe syntax
@@ -13,7 +13,7 @@ AVAILABLE PARAMETERS:
 SUBCOMMANDS:
   trim            Trim the extra whitespace of the string
   join            Join all new lines (replacing with spaces)
-  collapse        Delete multiple consecutive line breaks
+  collapse        Delete line breaks (default is multiple consecutive breaks, [-a,--all] for all)
   expand          Breaks spaces into new lines
   to_upper        Transform the case of the string to uppercase
   uppercase       (alias for to_upper)
