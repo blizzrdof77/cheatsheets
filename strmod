@@ -2,7 +2,7 @@ NAME:
   strmod
 
 VERSION:
-  0.43.2 (2023-07-14)
+  0.43.4 (2023-07-31)
 
 DESCRIPTION:
   strmod tests or performs an operation on a string using pipe syntax
@@ -68,7 +68,7 @@ OPTIONS:
   -v, --version   [display version information and exit]
 
 SYNOPSIS:
-  strmod operation [$1] [$2]
+  strmod SUBCOMMAND [ARGS]...
 
 EXAMPLES:
   echo "a string" | strmod to_upper                               # A STRING
