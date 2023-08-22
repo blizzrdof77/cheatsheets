@@ -2,7 +2,7 @@ NAME:
   strmod
 
 VERSION:
-  0.43.5 (2023-07-31)
+  0.44.0 (2023-08-22)
 
 DESCRIPTION:
   strmod tests or performs an operation on a string using pipe syntax
@@ -14,7 +14,7 @@ SUBCOMMANDS:
   trim            Trim the extra whitespace of the string
   join            Join all new lines (replacing with spaces)
   collapse        Delete line breaks (default is multiple consecutive breaks, [-a,--all] for all)
-  expand          Breaks spaces into new lines
+  expand          Breaks into new lines (defaults to spaces unless argument is provided)
   to_upper        Transform the case of the string to uppercase
   uppercase       (alias for to_upper)
   to_lower        Transform the case of the string to lowercase
@@ -93,3 +93,9 @@ EXAMPLES:
   echo "5" | strmod greaterthan 3								                  # true
   echo "5" | strmod lessthan 3                                    # false
   echo "20.54" | strmod round                                     # 21
+  echo "hello there now" | strmod expand                          # hello
+                                                                  # there
+                                                                  # now
+                                                                  #
+  echo "hello \n there now" | strmod expand ' \n '                # hello
+                                                                  # there now
