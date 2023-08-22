@@ -11,6 +11,7 @@ AVAILABLE PARAMETERS
   $1 - operation  [the type of operation or test to run against the string]
 
 SUBCOMMANDS
+
   trim            Trim the extra whitespace of the string
   join            Join all new lines (replacing with spaces)
   collapse        Delete line breaks (default is multiple consecutive breaks, [-a,--all] for all)
