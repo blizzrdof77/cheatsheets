@@ -1,16 +1,16 @@
-NAME:
+NAME
   strmod
 
-VERSION:
+VERSION
   0.44.0 (2023-08-22)
 
-DESCRIPTION:
+DESCRIPTION
   strmod tests or performs an operation on a string using pipe syntax
 
-AVAILABLE PARAMETERS:
+AVAILABLE PARAMETERS
   $1 - operation  [the type of operation or test to run against the string]
 
-SUBCOMMANDS:
+SUBCOMMANDS
   trim            Trim the extra whitespace of the string
   join            Join all new lines (replacing with spaces)
   collapse        Delete line breaks (default is multiple consecutive breaks, [-a,--all] for all)
@@ -63,14 +63,14 @@ SUBCOMMANDS:
   get_type        Return the data type of the value (number, string, boolean, array, object, null)
   is_type         Check if a value is of given type (number, string, boolean, array, object, null)
 
-OPTIONS:
+OPTIONS
   -h, --help      [display this help text and exit]
   -v, --version   [display version information and exit]
 
-SYNOPSIS:
+SYNOPSIS
   strmod SUBCOMMAND [ARGS]...
 
-EXAMPLES:
+EXAMPLES
   echo "a string" | strmod to_upper                               # A STRING
   echo "another string" | strmod contains "string"                # true
   echo "yet another string" | strmod length                       # 18
