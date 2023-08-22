@@ -24,7 +24,7 @@ SUBCOMMANDS:
   to_camel        Transform the case of the string to camel case
   camelcase       (alias for to_camel)
   capitalize      Transform the case of the string by capitalizing the first letter of each word
-  slugify         Replace spaces with provided character (default is '_')
+  slugify         Replace spaces with provided character (default is "_")
   trim_suffix     Trim string suffix of target string (default is whitespace)
   trim_prefix     Trim string prefix of target string (default is whitespace)
   strip           Trim string prefix [$1] and suffix [$2] (prefix/suffix are equal if [$2] not provided)
