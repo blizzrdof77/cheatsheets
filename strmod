@@ -2,7 +2,7 @@ NAME
   strmod
 
 VERSION
-  0.44.0 (2023-08-22)
+  0.44.2 (2023-08-28)
 
 DESCRIPTION
   strmod tests or performs an operation on a string using pipe syntax
@@ -11,7 +11,6 @@ AVAILABLE PARAMETERS
   $1 - operation  [the type of operation or test to run against the string]
 
 SUBCOMMANDS
-
   trim            Trim the extra whitespace of the string
   join            Join all new lines (replacing with spaces)
   collapse        Delete line breaks (default is multiple consecutive breaks, [-a,--all] for all)
