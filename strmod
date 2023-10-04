@@ -2,7 +2,7 @@ NAME
   strmod
 
 VERSION
-  0.44.2 (2023-08-28)
+  0.44.5 (2023-10-04)
 
 DESCRIPTION
   strmod tests or performs an operation on a string using pipe syntax
@@ -58,8 +58,8 @@ SUBCOMMANDS
   prepend         Prepends the provided substring
   append          Appends the provided substring
   wrap            Wraps the string with the provided prefix (arg 1) and suffix (arg 2)
-  calculate       Evaluate basic arithmetic operation (e.g. "+7") against the value and display the result
-  round           Round the subject number to the closest integer
+  calculate       Evaluate arithmetic operations (e.g. "+7") or convert scientific notation [-f, --format]
+  round           Round the subject number to the closest integer or to the provided number of decimal places
   get_type        Return the data type of the value (number, string, boolean, array, object, null)
   is_type         Check if a value is of given type (number, string, boolean, array, object, null)
 
@@ -83,6 +83,8 @@ EXAMPLES
   echo "::string::" | strmod strip '::' | strmod count ':'        # :string
   echo "5" | strmod get_type                                      # number
   echo "10" | strmod calculate '-9'                               # 1
+  echo "0.93900233333300469004" | strmod calculate -f             # 9.3900233333e-01
+  echo '4.0047e-04' | strmod calculate | round 9                  # 0.000400469
   echo '{}' | strmod is_type object                               # true
   echo 5 | strmod is_type string | strmod get_type                # boolean
   echo "abc" | strmod equals_any a b c                            # false
