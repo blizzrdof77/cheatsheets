@@ -2,7 +2,7 @@ NAME
   strmod
 
 VERSION
-  0.44.5 (2023-10-04)
+  0.44.6 (2023-10-11)
 
 DESCRIPTION
   strmod tests or performs an operation on a string using pipe syntax
