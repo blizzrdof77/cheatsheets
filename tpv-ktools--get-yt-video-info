@@ -25,4 +25,6 @@ PARAMETERS
     --help, -h: Show the help text.
 
 OUTPUT
-    The script produces output as JSON from YouTube's video search using yt-dlp CLI. Please note that this is a third-party script and not officially supported by YouTube. Always ensure you're adhering to the terms and conditions of YouTube.
+    The script produces output as JSON from YouTube's video search using yt-dlp CLI.
+
+    Please note that this is a third-party script and not officially supported by YouTube. Always ensure you're adhering to the terms and conditions of YouTube.
