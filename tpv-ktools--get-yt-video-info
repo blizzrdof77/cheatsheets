@@ -5,9 +5,7 @@ DESCRIPTION
     This script uses yt-dlp command line tool to search for track information about a YouTube video. It accepts various command-line arguments to define the search and output parameters.
 
 SYNOPSIS
-    This script retrieves detailed information about a specified track from YouTube and outputs it as JSON.
-
-DESCRIPTION
+    This script retrieves detailed information about a specified track from YouTube and outputs/saves it as JSON.
 
 EXAMPLES
     # To search for a track by artist and track title:
