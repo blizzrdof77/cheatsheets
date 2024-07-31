@@ -18,7 +18,7 @@ EXAMPLES
     ./tpv-ktools--get-yt-video-info --id B8dD0EtzVS0 --artist "The O.C. Supertones" --track "Supertones Strike Back"
 
 PARAMETERS
-    [--help, -h] Show the help text
+    [--help, -h] Show this help text
     [--artist, --band, --musician] The name of the artist, band, or musician.
     [--track, --song, --title] The title of the track or song.
     [--id, --video_id] The unique YouTube video ID
