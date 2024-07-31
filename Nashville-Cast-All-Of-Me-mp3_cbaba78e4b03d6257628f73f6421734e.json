@@ -1,0 +1,440 @@
+{
+    "text": " We are now at Abanao Street We are now at Abanao Street We are now at Abanao Street We are now at Abanao Street We are now at Abanao Street We are now at Abanao Street We are now at Abanao Street",
+    "segments": [
+        {
+            "id": 0,
+            "seek": 0,
+            "start": 10.24,
+            "end": 10.58,
+            "text": " We are now at Abanao Street",
+            "tokens": [
+                50363,
+                775,
+                389,
+                783,
+                379,
+                2275,
+                2271,
+                78,
+                3530,
+                50863
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.6533608436584473,
+            "compression_ratio": 0.7714285714285715,
+            "no_speech_prob": 0.5655218362808228,
+            "confidence": 0.417,
+            "words": [
+                {
+                    "text": "We",
+                    "start": 10.24,
+                    "end": 10.48,
+                    "confidence": 0.116
+                },
+                {
+                    "text": "are",
+                    "start": 10.48,
+                    "end": 10.5,
+                    "confidence": 0.869
+                },
+                {
+                    "text": "now",
+                    "start": 10.5,
+                    "end": 10.52,
+                    "confidence": 0.336
+                },
+                {
+                    "text": "at",
+                    "start": 10.52,
+                    "end": 10.54,
+                    "confidence": 0.741
+                },
+                {
+                    "text": "Abanao",
+                    "start": 10.54,
+                    "end": 10.56,
+                    "confidence": 0.35
+                },
+                {
+                    "text": "Street",
+                    "start": 10.56,
+                    "end": 10.58,
+                    "confidence": 0.851
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "seek": 3000,
+            "start": 30.02,
+            "end": 40.48,
+            "text": " We are now at Abanao Street",
+            "tokens": [
+                50363,
+                775,
+                389,
+                783,
+                379,
+                2275,
+                2271,
+                78,
+                3530,
+                50863
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3875059647993608,
+            "compression_ratio": 0.7714285714285715,
+            "no_speech_prob": 0.7649450898170471,
+            "confidence": 0.625,
+            "words": [
+                {
+                    "text": "We",
+                    "start": 30.02,
+                    "end": 31.7,
+                    "confidence": 0.576
+                },
+                {
+                    "text": "are",
+                    "start": 31.7,
+                    "end": 31.72,
+                    "confidence": 0.953
+                },
+                {
+                    "text": "now",
+                    "start": 31.72,
+                    "end": 32.34,
+                    "confidence": 0.524
+                },
+                {
+                    "text": "at",
+                    "start": 32.34,
+                    "end": 32.36,
+                    "confidence": 0.848
+                },
+                {
+                    "text": "Abanao",
+                    "start": 32.36,
+                    "end": 40.4,
+                    "confidence": 0.465
+                },
+                {
+                    "text": "Street",
+                    "start": 40.4,
+                    "end": 40.48,
+                    "confidence": 0.947
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "seek": 6000,
+            "start": 60.0,
+            "end": 70.48,
+            "text": " We are now at Abanao Street",
+            "tokens": [
+                50363,
+                775,
+                389,
+                783,
+                379,
+                2275,
+                2271,
+                78,
+                3530,
+                50863
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.38940403678200464,
+            "compression_ratio": 0.7714285714285715,
+            "no_speech_prob": 0.7619625329971313,
+            "confidence": 0.629,
+            "words": [
+                {
+                    "text": "We",
+                    "start": 60.0,
+                    "end": 63.22,
+                    "confidence": 0.622
+                },
+                {
+                    "text": "are",
+                    "start": 63.22,
+                    "end": 63.84,
+                    "confidence": 0.946
+                },
+                {
+                    "text": "now",
+                    "start": 63.84,
+                    "end": 63.86,
+                    "confidence": 0.545
+                },
+                {
+                    "text": "at",
+                    "start": 63.86,
+                    "end": 63.88,
+                    "confidence": 0.857
+                },
+                {
+                    "text": "Abanao",
+                    "start": 63.88,
+                    "end": 67.66,
+                    "confidence": 0.458
+                },
+                {
+                    "text": "Street",
+                    "start": 67.66,
+                    "end": 70.48,
+                    "confidence": 0.928
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "seek": 9000,
+            "start": 90.0,
+            "end": 100.48,
+            "text": " We are now at Abanao Street",
+            "tokens": [
+                50363,
+                775,
+                389,
+                783,
+                379,
+                2275,
+                2271,
+                78,
+                3530,
+                50863
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3198144219138406,
+            "compression_ratio": 0.7714285714285715,
+            "no_speech_prob": 0.7668513655662537,
+            "confidence": 0.692,
+            "words": [
+                {
+                    "text": "We",
+                    "start": 90.0,
+                    "end": 91.82,
+                    "confidence": 0.713
+                },
+                {
+                    "text": "are",
+                    "start": 91.82,
+                    "end": 91.94,
+                    "confidence": 0.965
+                },
+                {
+                    "text": "now",
+                    "start": 91.94,
+                    "end": 91.96,
+                    "confidence": 0.585
+                },
+                {
+                    "text": "at",
+                    "start": 91.96,
+                    "end": 91.98,
+                    "confidence": 0.902
+                },
+                {
+                    "text": "Abanao",
+                    "start": 91.98,
+                    "end": 92.0,
+                    "confidence": 0.537
+                },
+                {
+                    "text": "Street",
+                    "start": 92.0,
+                    "end": 100.48,
+                    "confidence": 0.934
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "seek": 12000,
+            "start": 120.0,
+            "end": 130.48,
+            "text": " We are now at Abanao Street",
+            "tokens": [
+                50363,
+                775,
+                389,
+                783,
+                379,
+                2275,
+                2271,
+                78,
+                3530,
+                50863
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.29673151536421344,
+            "compression_ratio": 0.7714285714285715,
+            "no_speech_prob": 0.8499286770820618,
+            "confidence": 0.724,
+            "words": [
+                {
+                    "text": "We",
+                    "start": 120.0,
+                    "end": 122.34,
+                    "confidence": 0.74
+                },
+                {
+                    "text": "are",
+                    "start": 122.34,
+                    "end": 122.36,
+                    "confidence": 0.969
+                },
+                {
+                    "text": "now",
+                    "start": 122.36,
+                    "end": 122.38,
+                    "confidence": 0.666
+                },
+                {
+                    "text": "at",
+                    "start": 122.38,
+                    "end": 122.4,
+                    "confidence": 0.899
+                },
+                {
+                    "text": "Abanao",
+                    "start": 122.4,
+                    "end": 122.44,
+                    "confidence": 0.573
+                },
+                {
+                    "text": "Street",
+                    "start": 122.44,
+                    "end": 130.48,
+                    "confidence": 0.936
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "seek": 15000,
+            "start": 150.0,
+            "end": 160.3,
+            "text": " We are now at Abanao Street",
+            "tokens": [
+                50363,
+                775,
+                389,
+                783,
+                379,
+                2275,
+                2271,
+                78,
+                3530,
+                50863
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2931892221624201,
+            "compression_ratio": 0.7714285714285715,
+            "no_speech_prob": 0.8081284761428833,
+            "confidence": 0.734,
+            "words": [
+                {
+                    "text": "We",
+                    "start": 150.0,
+                    "end": 153.32,
+                    "confidence": 0.767
+                },
+                {
+                    "text": "are",
+                    "start": 153.32,
+                    "end": 153.34,
+                    "confidence": 0.958
+                },
+                {
+                    "text": "now",
+                    "start": 153.34,
+                    "end": 153.36,
+                    "confidence": 0.678
+                },
+                {
+                    "text": "at",
+                    "start": 153.36,
+                    "end": 153.38,
+                    "confidence": 0.908
+                },
+                {
+                    "text": "Abanao",
+                    "start": 153.38,
+                    "end": 159.9,
+                    "confidence": 0.589
+                },
+                {
+                    "text": "Street",
+                    "start": 159.9,
+                    "end": 160.3,
+                    "confidence": 0.91
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "seek": 18000,
+            "start": 180.0,
+            "end": 186.66,
+            "text": " We are now at Abanao Street",
+            "tokens": [
+                50363,
+                775,
+                389,
+                783,
+                379,
+                2275,
+                2271,
+                78,
+                3530,
+                50863
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.17070984840393066,
+            "compression_ratio": 0.7714285714285715,
+            "no_speech_prob": 0.7456696629524231,
+            "confidence": 0.838,
+            "words": [
+                {
+                    "text": "We",
+                    "start": 180.0,
+                    "end": 183.12,
+                    "confidence": 0.867
+                },
+                {
+                    "text": "are",
+                    "start": 183.12,
+                    "end": 183.34,
+                    "confidence": 0.982
+                },
+                {
+                    "text": "now",
+                    "start": 183.34,
+                    "end": 183.36,
+                    "confidence": 0.786
+                },
+                {
+                    "text": "at",
+                    "start": 183.36,
+                    "end": 183.72,
+                    "confidence": 0.936
+                },
+                {
+                    "text": "Abanao",
+                    "start": 183.72,
+                    "end": 186.64,
+                    "confidence": 0.74
+                },
+                {
+                    "text": "Street",
+                    "start": 186.64,
+                    "end": 186.66,
+                    "confidence": 0.96
+                }
+            ]
+        }
+    ],
+    "language": "en"
+}
