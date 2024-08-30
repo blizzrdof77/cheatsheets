@@ -1,42 +1,43 @@
----
-tags: [ color ]
----
+NAME
+  color
 
-# scp
-Color and format your shell script output with minimal effort.
+SYNOPSIS
+  color [EFFECT] [[lt]fgcolor] [bgcolor]
 
-# Usage:
-color [ effect ] [ [lt]fgcolor ] [ bgcolor ]
-color list
-color [ -h | --help ]
+DESCRIPTION
+  Color and format your shell script output with minimal effort
+    - fgcolor and bgcolor are one of black red green yellow blue magenta cyan white
+    - effect can be any of nm/normal bd/bold ft/faint it/italic ul/underline bk/blink fb/fastblink rv/reverse iv/invisible
+    - prefix the fgcolor name with 'lt' (e.g. ltblue) to use a lighter version of that color
+    - 'color --off' or 'color' resets to default colors and text effect
+    - 'color --list' displays all possible color combinations
 
-where:
-fgcolor and bgcolor are one of black red green yellow blue magenta cyan white
-effect can be any of nm normal bd bold ft faint it italic ul underline bk blink fb fastblink rv reverse iv invisible
-Preceed the fgcolor with lt to use a light color.
-color off or color resets to default colors and text effect.
-color list displays all possible color combinations.
+  Note that results may vary with standard ANSI escape sequences.
 
-Examples:
+OPTIONS
+  [--help, -h]          - display this help and exit
+  [--list, -l]          - list all available color options
+  [--off]               - resets to default colors and text effect
+
+ARGUMENTS
+  [1] EFFECT  - the effect or style.
+  [2] FGCOLOR - the text color (or foreground color)
+  [3] BGCOLOR - the background color
+
+EXAMPLES
+  # Underlined text
   echo "$(color ul)Underlined text$(color off)"
-results in:
-  Underlined text
 
+  # Make this reverse video text
   echo "Make $(color rv)this$(color nm) reverse video text$(color off)"
-results in:
-  Make this reverse video text
 
+  # White text on a blue background
   echo "$(color white blue) White text on a blue background $(color)"
-results in:
-   White text on a blue background
 
+  # Light prefix on the yellow text text
   echo "$(color ltyellow green) lt prefix on the yellow text text $(color off)"
-results in:
-   lt prefix on the yellow text text
 
-  echo "$(color bold blink red yellow) Blinking bold red text on a yellow background $(color)"
-results in:
-   Blinking bold red text on a yellow background
+  # Blinking red text w/ yellow bg
+  echo "$(color blink red yellow) Blinking bold red text on a yellow background $(color)"
 
 
-Note that results may vary with these standard ANSI escape sequences because of the different configurations of terminal emulators.
