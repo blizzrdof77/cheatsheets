@@ -1,0 +1,31 @@
+NAME
+  conf-to-env-vars
+
+SYNOPSIS
+  conf-to-env-vars [OPTION...] [CONFIG]
+
+DESCRIPTION
+  Parses a standard ".conf" configuration file and exports
+  all variables and values as shell environment variables.
+
+OPTIONS
+  [--help, -h]    - display this help and exit
+  [--output, -o]  - output the environment variable script
+                    without loading them into the session
+  [--save, -s]    - don't remove the temporary source file created
+  [--match, -m]   - only grab variables that match a keyword or phrase
+
+ARGUMENTS
+  [1] CONFIG      - optionally provide the full path to the
+                    config file -- defaults to $GOUPC_CONF
+                    when defined, or /etc/go-upc/default.conf
+                    as a last resort if it exists.
+
+ENVIRONMENT
+  The behavior of this script is affected by the following environment variables:
+  - GOUPC_CONF
+
+EXAMPLES
+  conf-to-env-vars ./my.conf
+  conf-to-env-vars
+  conf-to-env-vars --match 'walmart'

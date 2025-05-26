@@ -2,17 +2,22 @@ NAME
   strmod
 
 VERSION
-  0.44.6 (2023-10-11)
+  0.46.2 (2025-04-07)
 
 DESCRIPTION
   strmod tests or performs an operation on a string using pipe syntax
 
-AVAILABLE PARAMETERS
-  $1 - operation  [the type of operation or test to run against the string]
+OPTIONS
+  -h, --help      [display this help text and exit]
+  -v, --version   [display version information and exit]
+
+SYNOPSIS
+  strmod [OPTION...] SUBCOMMAND [ARGS...] ...
 
 SUBCOMMANDS
   trim            Trim the extra whitespace of the string
   join            Join all new lines (replacing with spaces)
+  repeat          Repeat the subject string [$1] times, optionally providing [$2] as glue with a default of new line
   collapse        Delete line breaks (default is multiple consecutive breaks, [-a,--all] for all)
   expand          Breaks into new lines (defaults to spaces unless argument is provided)
   to_upper        Transform the case of the string to uppercase
@@ -28,11 +33,11 @@ SUBCOMMANDS
   trim_suffix     Trim string suffix of target string (default is whitespace)
   trim_prefix     Trim string prefix of target string (default is whitespace)
   strip           Trim string prefix [$1] and suffix [$2] (prefix/suffix are equal if [$2] not provided)
-  split           Split subject string at provided substring, optionally return index [$2] OR string using [$2] as glue
   chop            Remove specified number of lines from the end of the subject string
   skip            Remove specified number of lines from the beginning of the subject string
+  split           Split subject string at provided substring [$1], optionally returning index [$2], first, or, last piece
   slice           Split subject string into pieces at provided substring [$1], optionally returning first or last piece
-  replace         Find & replace subject string [$1] with other target string [$2]
+  replace         Find/replace subject string(s) [$1] with target string(s) [$2] (multi-strings must be wrapped in parentheses)
   find_replace    (alias for replace)
   regex_replace   RegEx find/replace using provided needle [$1] and replacement string [$2]
   regreplace      (alias for regex_replace)
@@ -60,17 +65,10 @@ SUBCOMMANDS
   prepend         Prepends the provided substring
   append          Appends the provided substring
   wrap            Wraps the string with the provided prefix (arg 1) and suffix (arg 2)
-  calculate       Evaluate arithmetic operations (e.g. "+7") or convert scientific notation [-f, --format]
+  calculate       Evaluate arithmetic operations (e.g. "+7") or convert scientific notation [-f,--format]
   round           Round the subject number to the closest integer or to the provided number of decimal places
   get_type        Return the data type of the value (number, string, boolean, array, object, null)
   is_type         Check if a value is of given type (number, string, boolean, array, object, null)
-
-OPTIONS
-  -h, --help      [display this help text and exit]
-  -v, --version   [display version information and exit]
-
-SYNOPSIS
-  strmod SUBCOMMAND [ARGS]...
 
 EXAMPLES
   echo "a string" | strmod to_upper                               # A STRING
@@ -80,6 +78,7 @@ EXAMPLES
   echo "yet another string" | strmod count " "                    # 2
   echo "yet\n another \nstring" | strmod lines                    # 3
   echo "small string" | strmod replace 'small' 'tiny'             # tiny string
+  echo "you are ok" | strmod replace '(you,are)' '(he,is)'        # he is ok
   echo "string 1" | strmod regex_replace '(.*?)[ ].*' '\1_2'      # string_2
   echo "::string::" | strmod strip ':' '::'                       # :string
   echo "::string::" | strmod strip '::' | strmod count ':'        # :string
@@ -92,14 +91,14 @@ EXAMPLES
   echo "abc" | strmod equals_any a b c                            # false
   echo "abc" | strmod contains_any a b c                          # true
   echo "uno,dos,tres" | strmod split "," 1                        # dos
+  echo "uno,dos,tres" | strmod split ',' first                    # uno
   echo "http://website.com" | strmod slice "://" last             # website.com
   echo "jo McCan" | strmod capitalize							                # Joe McCan
   echo "5" | strmod greaterthan 3								                  # true
   echo "5" | strmod lessthan 3                                    # false
   echo "20.54" | strmod round                                     # 21
+  echo -e "1\n2\n3" | strmod join ','                             # 1,2,3
+  echo -e "xo" | strmod repeat 5 ''                               # xoxoxoxoxo
   echo "hello there now" | strmod expand                          # hello
                                                                   # there
                                                                   # now
-                                                                  #
-  echo "hello \n there now" | strmod expand ' \n '                # hello
-                                                                  # there now

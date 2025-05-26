@@ -1,0 +1,26 @@
+NAME
+  tpv-ktools--search-spotify-track
+
+VERSION
+  0.1.1 (2023-10-19)
+
+DESCRIPTION
+  Search for Spotify track information and return any field (defaulting to the URL).
+
+AVAILABLE PARAMETERS
+  $1 - search phrase
+
+OPTIONS
+  -h, --help                  - display this help text and exit
+  --json                      - return full JSON of results
+  --fields                    - show a list of fields
+  --field [field_name]        - return the field name provided
+
+EXAMPLES
+  tpv-ktools--search-spotify-track "Artist - Song Name"
+  tpv-ktools--search-spotify-track --artist "Baha Men" --track "Who Let the Dogs Out"
+  tpv-ktools--search-spotify-track "Bruce Springsteen - Highway Patrolman" --json
+  tpv-ktools--search-spotify-track "Bruce Springsteen - Highway Patrolman" --field artists
+  tpv-ktools--search-spotify-track "Bruce Springsteen - Highway Patrolman" --field url
+  tpv-ktools--search-spotify-track "Bruce Springsteen - Highway Patrolman" --field formatted
+  tpv-ktools--search-spotify-track "Bruce Springsteen - Highway Patrolman" --fields

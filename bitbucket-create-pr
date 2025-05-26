@@ -1,0 +1,46 @@
+NAME
+  bitbucket-create-pr
+
+SYNOPSIS
+  bitbucket-create-pr [OPTION...] [BRANCH] TITLE
+
+DESCRIPTION
+  Creates a pull request in BitBucket cloud for a repository
+  given the remote branch name and a PR title/description.
+
+OPTIONS
+  [--help, -h]          - display this help and exit
+  [--branch, -b]        - provide the branch name
+  [--title, -t]         - provide the title for the PR
+  [--description, -d]   - provide a description for the PR
+  [--list, -l]          - list current pull requests
+  [--current-user]      - list current user details
+  [--users]             - list all known user details
+
+ARGUMENTS
+  [1] BRANCH  - the name of the remote branch
+  [2] TITLE   - the title or description to use for this PR
+
+ENVIRONMENT
+  The following environment variables are required for
+  this script to function properly:
+  - BITBUCKET_GOUPC_CLI_ACCESS_TOKEN
+  - BITBUCKET_USERNAME
+  - BITBUCKET_PASSWORD
+
+EXAMPLES
+  # Create PR using the name of the branch currently checked out locally
+  bitbucket-create-pr "The PR Title"
+
+  # List remote pull requests as JSON
+  bitbucket-create-pr --list
+
+  # List current user details as JSON
+  bitbucket-create-pr --current-user
+
+  # Create PR called "My BitBucket PR" using the branch "my-branch"
+  bitbucket-create-pr my-branch "My BitBucket PR"
+  bitbucket-create-pr --branch my-branch --title "My BitBucket PR"
+
+  # Create PR of current local branch with a title and description
+  bitbucket-create-pr --title "DevOps.bin: bitbucket-create-pr" --description "Created script to create PRs on BitBucket"

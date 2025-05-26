@@ -1,0 +1,31 @@
+NAME
+  update-debian-worker
+
+SYNOPSIS
+  update-debian-worker [OPTION...] [SOURCE] TARGETS...
+
+DESCRIPTION
+  Packages jars and deploys them to one or
+  more remote servers using sbt and rsync.
+
+OPTIONS
+  [--help, -h]      - display this help and exit
+  [--verbose, -v]   - show some additional information / verbosity
+  [--source, -d]    - the local source directory of the application
+  [--target, -t]    - the target hosts as user@hostname to copy the jars
+  [--service, -s]   - when provided, this service will be restarted on
+                      the remote target hosts after deploying the jars
+  [--skip-sync]     - don't rsync the packaged jars to remote servers
+  [--skip-stage]    - don't run sbt stage / skip packaging of jars
+  [--clean]         - run sbt clean before packaging jars (default is not to clean)
+
+ARGUMENTS
+  [1] SOURCE      - optionally provide the full path to the app source
+                    directory (defaults to current working directory)
+  [2] TARGETS...  - one or more destination servers specificied as
+                    'user@host' to copy the packaged jars.
+
+EXAMPLES
+  update-debian-worker /var/app root@abc.com root@123.123.123
+  update-debian-worker --verbose --skip-sync /var/app
+  update-debian-worker --skip-stage --source /var/app -t root@123 -t root@234

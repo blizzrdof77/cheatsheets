@@ -1,26 +1,63 @@
 NAME
-  tpv-ktools--search-spotify-track
-
-VERSION
-  0.1.1 (2023-10-19)
+    tpv-ktools--search-spotify-track
 
 DESCRIPTION
-  Search for Spotify track information and return any field (defaulting to the URL).
+    The tpv-ktools--search-spotify-track script is a command-line 
+interface that interacts with the Spotify API. It takes song details as 
+command line arguments and searches Spotify for the song, returning 
+various details about the track.
 
-AVAILABLE PARAMETERS
-  $1 - search phrase
+SYNOPSIS
+    This script retrieves detailed information about a specified track 
+from Spotify and outputs it in a user-friendly manner.
 
-OPTIONS
-  -h, --help                  - display this help text and exit
-  --json                      - return full JSON of results
-  --fields                    - show a list of fields
-  --field [field_name]        - return the field name provided
+DESCRIPTION
+    This script uses the Spotify API to search for track information. It 
+accepts various command-line arguments to define the search and output 
+parameters, and it can output the results in different ways according to 
+the user's needs. The script can search for tracks by artist name, album 
+name, or track title; it can also control the level of detail in the 
+output and output the results in a variety of formats.
 
 EXAMPLES
-  tpv-ktools--search-spotify-track "Artist - Song Name"
-  tpv-ktools--search-spotify-track --artist "Baha Men" --track "Who Let the Dogs Out"
-  tpv-ktools--search-spotify-track "Bruce Springsteen - Highway Patrolman" --json
-  tpv-ktools--search-spotify-track "Bruce Springsteen - Highway Patrolman" --field artists
-  tpv-ktools--search-spotify-track "Bruce Springsteen - Highway Patrolman" --field url
-  tpv-ktools--search-spotify-track "Bruce Springsteen - Highway Patrolman" --field formatted
-  tpv-ktools--search-spotify-track "Bruce Springsteen - Highway Patrolman" --fields
+    # To search for a track by artist and track title:
+    ./tpv-ktools--search-spotify-track "Coldplay - The Scientist"
+
+    # To search for a track by specifying artist and track separately:
+    ./tpv-ktools--search-spotify-track --artist "Coldplay" --track "The 
+Scientist"
+
+    # To get the Spotify URL of a track:
+    ./tpv-ktools--search-spotify-track "Coldplay - The Scientist" 
+--field url
+
+    # To get details of the album a track is from:
+    ./tpv-ktools--search-spotify-track "Coldplay - The Scientist" 
+--field album
+
+    # To get a detailed summary of a track:
+    ./tpv-ktools--search-spotify-track "Coldplay - The Scientist" 
+--summary
+
+PARAMETERS
+    --artist, --band, --musician: The name of the artist, band, or 
+musician.
+    --album, --release: The name of the album or release.
+    --track, --song, --title: The title of the track or song.
+    --field, --key: The name of a specific field to be returned.
+    --fields, --keys: Show all available fields that can be returned.
+    --summary, --verbose, --full, --raw, --json, -v: Show a summary of 
+all available information.
+    --help, -h: Show the help text.
+
+OUTPUT
+    The script produces output as per the --field parameter. If no 
+--field is specified, it returns the Spotify URL of the track. If the 
+--summary flag is used, it returns detailed information about the track, 
+including artist, album, and track details. If the --fields or --keys 
+flags are used, it lists all available fields that can be returned.
+
+    Please note that this is a third-party script and not officially 
+supported by Spotify. Always ensure you're adhering to the terms and 
+conditions of the Spotify API.
+
