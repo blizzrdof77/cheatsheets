@@ -29,6 +29,8 @@ SUBCOMMANDS
   trim_prefix     Trim string prefix of target string (default is whitespace)
   strip           Trim string prefix [$1] and suffix [$2] (prefix/suffix are equal if [$2] not provided)
   split           Split subject string at provided substring, optionally return index [$2] OR string using [$2] as glue
+  chop            Remove specified number of lines from the end of the subject string
+  skip            Remove specified number of lines from the beginning of the subject string
   slice           Split subject string into pieces at provided substring [$1], optionally returning first or last piece
   replace         Find & replace subject string [$1] with other target string [$2]
   find_replace    (alias for replace)
