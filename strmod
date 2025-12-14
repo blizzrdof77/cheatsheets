@@ -2,7 +2,7 @@ NAME
   strmod
 
 VERSION
-  0.46.2 (2025-04-07)
+  0.47.4 (2025-05-27)
 
 DESCRIPTION
   strmod tests or performs an operation on a string using pipe syntax
@@ -56,7 +56,8 @@ SUBCOMMANDS
   endswith        Test whether the string ends with the provided substring (true/false)
   startswith      Test whether the string starts with the provided substring (true/false)
   empty           Test whether the string is empty (true/false)
-  contains        Test whether the string contains the provided substring (true/false)
+  matches_any     Test whether any part of the string matches the provided regex (true/false)
+  matches_all     Test if the entire string matches the regex provided (true/false)
   contains_any    Test whether the string contains any of the provided substrings (true/false)
   equals          Test whether the string is the same as the provided substring (true/false)
   equals_any      Test whether the string is the same as any of the provided substrings (true/false)
@@ -69,6 +70,7 @@ SUBCOMMANDS
   round           Round the subject number to the closest integer or to the provided number of decimal places
   get_type        Return the data type of the value (number, string, boolean, array, object, null)
   is_type         Check if a value is of given type (number, string, boolean, array, object, null)
+  is_numeric      Test whether the subject value is numeric
 
 EXAMPLES
   echo "a string" | strmod to_upper                               # A STRING
@@ -99,6 +101,5 @@ EXAMPLES
   echo "20.54" | strmod round                                     # 21
   echo -e "1\n2\n3" | strmod join ','                             # 1,2,3
   echo -e "xo" | strmod repeat 5 ''                               # xoxoxoxoxo
-  echo "hello there now" | strmod expand                          # hello
-                                                                  # there
-                                                                  # now
+  echo "0022" | strmod is_numeric                                 # true
+  echo "hello there now" | strmod expand                          # hello\nthere\nnow
