@@ -50,7 +50,9 @@ SUBCOMMANDS
   line            Returns line number [$1] of subject string
   lines           Returns number of lines in subject string OR number of lines containing provided substring [$1]
   sort            Sorts or merges lines of subject string [-r,--reverse]
-  random          Randomizes the order of lines in subject string
+  scramble        Mix up all characters in subject string
+  jumble          Mix up all words in subject string
+  random          Mix up/randomize the order of lines in subject string
   shuffle         (alias for random)
   reverse         Reverses the order of the lines in subject string
   endswith        Test whether the string ends with the provided substring (true/false)
