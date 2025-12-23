@@ -2,7 +2,7 @@ NAME
   strmod
 
 VERSION
-  0.47.4 (2025-05-27)
+  0.49.2 (2025-12-22)
 
 DESCRIPTION
   strmod tests or performs an operation on a string using pipe syntax
@@ -15,9 +15,11 @@ SYNOPSIS
   strmod [OPTION...] SUBCOMMAND [ARGS...] ...
 
 SUBCOMMANDS
-  trim            Trim the extra whitespace of the string
+  trim            Trim the extra whitespace of the string ([-a,--all] to trim all lines)
+  strip_ansi      Strip ANSI escape sequences from text (common for colored output)
+  unansi          (alias for strip_ansi)
   join            Join all new lines (replacing with spaces)
-  repeat          Repeat the subject string [$1] times, optionally providing [$2] as glue with a default of new line
+  repeat          Repeat the subject string (1) times, optionally providing (2) as glue with a default of new line
   collapse        Delete line breaks (default is multiple consecutive breaks, [-a,--all] for all)
   expand          Breaks into new lines (defaults to spaces unless argument is provided)
   to_upper        Transform the case of the string to uppercase
@@ -32,23 +34,23 @@ SUBCOMMANDS
   slugify         Replace spaces with provided character (default is "_")
   trim_suffix     Trim string suffix of target string (default is whitespace)
   trim_prefix     Trim string prefix of target string (default is whitespace)
-  strip           Trim string prefix [$1] and suffix [$2] (prefix/suffix are equal if [$2] not provided)
+  strip           Trim string prefix (1) and suffix (2) (prefix/suffix are equal if (2) not provided)
   chop            Remove specified number of lines from the end of the subject string
   skip            Remove specified number of lines from the beginning of the subject string
-  split           Split subject string at provided substring [$1], optionally returning index [$2], first, or, last piece
-  slice           Split subject string into pieces at provided substring [$1], optionally returning first or last piece
-  replace         Find/replace subject string(s) [$1] with target string(s) [$2] (multi-strings must be wrapped in parentheses)
+  split           Split subject string at provided substring (1), optionally returning index (2), first, or, last piece
+  slice           Split subject string into pieces at provided substring (1), optionally returning first or last piece
+  replace         Find/replace subject string(s) (1) with target string(s) (2) (multi-strings must be wrapped in parentheses)
   find_replace    (alias for replace)
-  regex_replace   RegEx find/replace using provided needle [$1] and replacement string [$2]
+  regex_replace   RegEx find/replace using provided needle (1) and replacement string (2)
   regreplace      (alias for regex_replace)
   remove          Removes all provided substrings from subject string
   without         (alias for remove)
   words           Count number of words in subject string
   length          Returns length of subject string
-  count           Returns number of times substring [$1] occurs in subject string
+  count           Returns number of times substring (1) occurs in subject string
   chars           Count total number of characters in subject string
-  line            Returns line number [$1] of subject string
-  lines           Returns number of lines in subject string OR number of lines containing provided substring [$1]
+  line            Returns line number (1) of subject string
+  lines           Returns number of lines in subject string OR number of lines containing provided substring (1)
   sort            Sorts or merges lines of subject string [-r,--reverse]
   scramble        Mix up all characters in subject string
   jumble          Mix up all words in subject string
