@@ -2,14 +2,15 @@ NAME
     strmod
 
 VERSION
-    0.49.2 (2025-12-22)
+    0.50.0 (2026-03-30)
 
 DESCRIPTION
-    strmod tests or performs an operation on a string using pipe syntax
+    tests or performs an operation on a string using pipe syntax
 
 OPTIONS
     -h, --help      [display this help text and exit]
     -v, --version   [display version information and exit]
+    -d, --debug     [show debug info for each execution statement]
 
 GLOBAL PARAMETERS
     -n, --not       [inverts binary results (i.e. swaps "true" and "false")]
@@ -101,10 +102,10 @@ EXAMPLES
     echo "abc" | strmod equals_any a b c                            # false
     echo "abc" | strmod contains_any a b c                          # true
     echo "uno,dos,tres" | strmod split "," 1                        # dos
-    echo "uno,dos,tres" | strmod split ',' first                    # uno
-    echo "http://website.com" | strmod slice "://" last             # website.com
-    echo "jo McCan" | strmod capitalize							                # Joe McCan
-    echo "5" | strmod greaterthan 3								                  # true
+    echo "uno,dos,tres" | strmod split ',' --first                  # uno
+    echo "http://website.com" | strmod slice "://" --last           # website.com
+    echo "joe McCan" | strmod capitalize							# Joe McCan
+    echo "5" | strmod greaterthan 3								    # true
     echo "5" | strmod lessthan 3                                    # false
     echo "20.54" | strmod round                                     # 21
     echo -e "1\n2\n3" | strmod join ','                             # 1,2,3
