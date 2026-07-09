@@ -2,18 +2,19 @@ NAME
     strmod
 
 VERSION
-    0.50.0 (2026-03-30)
+    0.51.1 (2026-07-09)
 
 DESCRIPTION
-    tests or performs an operation on a string using pipe syntax
+    A shell-friendly text utility for transforming, extracting, testing, and formatting STDIN in small, composable CLI pipelines.
 
 OPTIONS
-    -h, --help      [display this help text and exit]
-    -v, --version   [display version information and exit]
-    -d, --debug     [show debug info for each execution statement]
+    -h, --help          [display this help text and exit]
+    -v, --version       [display version information and exit]
+    -d, --debug         [show debug info for each execution statement]
 
 GLOBAL PARAMETERS
-    -n, --not       [inverts binary results (i.e. swaps "true" and "false")]
+    -n, --not, --invert             [invert binary results, swapping "true" and "false"]
+    -m, --map, --each-line, -L      [apply the subcommand to each input line independently]
 
 SYNOPSIS
     strmod [OPTION...] SUBCOMMAND [ARGS...] ...
@@ -22,10 +23,14 @@ SUBCOMMANDS
     trim            Trim the extra whitespace of the string ([-a,--all] to trim all lines)
     strip_ansi      Strip ANSI escape sequences from text (common for colored output)
     unansi          (alias for strip_ansi)
-    join            Join all new lines (replacing with spaces)
+    join            Join all new lines using the provided delimiter (default is space)
+    join_wrap       Wrap each input line, then join the wrapped lines using the provided delimiter
+    wrap_join       (alias for join_wrap)
+    quote_join      (alias for join_wrap)
+    qjoin           (alias for join_wrap)
     repeat          Repeat the subject string (1) times, optionally providing (2) as glue with a default of new line
     collapse        Delete line breaks (default is multiple consecutive breaks, [-a,--all] for all)
-    expand          Breaks into new lines (defaults to spaces unless argument is provided)
+    expand          Break into new lines (defaults to spaces unless argument is provided)
     to_upper        Transform the case of the string to uppercase
     uppercase       (alias for to_upper)
     to_lower        Transform the case of the string to lowercase
@@ -41,45 +46,57 @@ SUBCOMMANDS
     strip           Trim string prefix (1) and suffix (2) (prefix/suffix are equal if (2) not provided)
     chop            Remove specified number of lines from the end of the subject string
     skip            Remove specified number of lines from the beginning of the subject string
-    split           Split subject string at provided substring (1), optionally returning index (2), first, or, last piece
+    split           Split subject string at provided substring (1), optionally returning index (2), first, or last piece
     slice           Split subject string into pieces at provided substring (1), optionally returning first or last piece
     replace         Find/replace subject string(s) (1) with target string(s) (2) (multi-strings must be wrapped in parentheses)
     find_replace    (alias for replace)
     regex_replace   RegEx find/replace using provided needle (1) and replacement string (2)
     regreplace      (alias for regex_replace)
-    remove          Removes all provided substrings from subject string
+    remove          Remove all provided substrings from subject string
     without         (alias for remove)
     words           Count number of words in subject string
-    length          Returns length of subject string
-    count           Returns number of times substring (1) occurs in subject string
+    length          Return length of subject string
+    count           Return number of times substring (1) occurs in subject string
     chars           Count total number of characters in subject string
-    line            Returns line number (1) of subject string
-    lines           Returns number of lines in subject string OR number of lines containing provided substring (1)
-    sort            Sorts or merges lines of subject string [-r,--reverse]
+    line            Return line number (1) of subject string
+    lines           Return number of lines in subject string OR number of lines containing provided substring (1)
+    sort            Sort or merge lines of subject string [-r,--reverse]
     scramble        Mix up all characters in subject string
     jumble          Mix up all words in subject string
     random          Mix up/randomize the order of lines in subject string
     shuffle         (alias for random)
-    reverse         Reverses the order of the lines in subject string
+    reverse         Reverse the order of the lines in subject string
     endswith        Test whether the string ends with the provided substring (true/false)
     startswith      Test whether the string starts with the provided substring (true/false)
     empty           Test whether the string is empty (true/false)
     matches_any     Test whether any part of the string matches the provided regex (true/false)
     matches_all     Test if the entire string matches the regex provided (true/false)
+    contains        Test whether the string contains the provided substring or regex (true/false)
     contains_any    Test whether the string contains any of the provided substrings (true/false)
     equals          Test whether the string is the same as the provided substring (true/false)
     equals_any      Test whether the string is the same as any of the provided substrings (true/false)
     greaterthan     Test whether the numeric string is greater than the provided numeric value (true/false)
     lessthan        Test whether the numeric string is less than the provided numeric value (true/false)
-    prepend         Prepends the provided substring
-    append          Appends the provided substring
-    wrap            Wraps the string with the provided prefix (arg 1) and suffix (arg 2)
+    prepend         Prepend the provided substring
+    append          Append the provided substring
+    wrap            Wrap the string with the provided prefix (arg 1) and suffix (arg 2)
     calculate       Evaluate arithmetic operations (e.g. "+7") or convert scientific notation [-f,--format]
     calc            (alias for calculate)
     round           Round the subject number to the closest integer or to the provided number of decimal places
     get_type        Return the data type of the value (number, string, boolean, array, object, null)
     is_type         Check if a value is of given type (number, string, boolean, array, object, null)
     is_numeric      Test whether the subject value is numeric
+
+JOIN_WRAP ARGUMENTS
+    strmod join_wrap [delimiter] [prefix] [suffix]
+
+    delimiter       String used to join wrapped lines (default is space)
+    prefix          String added before each line/item (default is double quote)
+    suffix          String added after each line/item (default is same as prefix)
+
+MAP MODE
+    By default, strmod applies each subcommand to STDIN as one complete string.
+    Use --map, -m, --each-line, or -L before the subcommand to apply that subcommand to each input line independently.
 
 EXAMPLES
     echo "a string" | strmod to_upper                               # A STRING
@@ -96,7 +113,7 @@ EXAMPLES
     echo "5" | strmod get_type                                      # number
     echo "10" | strmod calculate '-9'                               # 1
     echo "0.93900233333300469004" | strmod calculate -f             # 9.3900233333e-01
-    echo '4.0047e-04' | strmod calculate | round 9                  # 0.000400469
+    echo '4.0047e-04' | strmod calculate | strmod round 9           # 0.000400469
     echo '{}' | strmod is_type object                               # true
     echo 5 | strmod is_type string | strmod get_type                # boolean
     echo "abc" | strmod equals_any a b c                            # false
@@ -104,12 +121,16 @@ EXAMPLES
     echo "uno,dos,tres" | strmod split "," 1                        # dos
     echo "uno,dos,tres" | strmod split ',' --first                  # uno
     echo "http://website.com" | strmod slice "://" --last           # website.com
-    echo "joe McCan" | strmod capitalize							# Joe McCan
-    echo "5" | strmod greaterthan 3								    # true
+    echo "joe McCan" | strmod capitalize                            # Joe McCan
+    echo "5" | strmod greaterthan 3                                 # true
     echo "5" | strmod lessthan 3                                    # false
     echo "20.54" | strmod round                                     # 21
-    echo -e "1\n2\n3" | strmod join ','                             # 1,2,3
+    echo -e "1\n2\n3" | strmod join ','                            # 1,2,3
+    echo -e "1\n2\n3" | strmod join_wrap ', ' '"'                  # "1", "2", "3"
+    echo -e "1\n2\n3" | strmod join_wrap ', ' '(' ')'               # (1), (2), (3)
     echo -e "xo" | strmod repeat 5 ''                               # xoxoxoxoxo
     echo "0022" | strmod is_numeric                                 # true
     echo "hello there now" | strmod expand                          # hello\nthere\nnow
     echo "inverting result" | strmod contains 'invert' --not        # false
+    echo -e "a\nb\nc" | strmod wrap '"'                             # "a\nb\nc"
+    echo -e "a\nb\nc" | strmod --map wrap '"'                       # "a"\n"b"\n"c"
